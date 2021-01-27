@@ -1,0 +1,10 @@
+<div class="card">
+  <div class="card-title">Credit card Lsit</div>
+  <div class="card-body" *ngIf="(cards$ | async)?.length">
+    <div class="list-group">
+      <button class="list-group-item list-group-item-action rounded-0" *ngFor="let card of cards$ | async"
+        >{{card.creditCardNumber}}
+      </button>
+    </div>
+  </div>
+</div>

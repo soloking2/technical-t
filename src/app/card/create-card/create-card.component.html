@@ -1,0 +1,76 @@
+<main>
+  <section>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6 mx-auto">
+          <div class="alert alert-danger">
+            <p></p>
+          </div>
+          <div class="card">
+            <div class="card-body">
+              <h2 class="card-title">CREATE CREDIT CARD PAYMENT</h2>
+              <form [formGroup]="cardPaymentForm" (ngSubmit)="submit()">
+                <div class="form-group" [ngClass]="{'has-error': formErrors.creditCardNumber}">
+                  <label for="creditCardNumber">Credit Card Number</label>
+                  <input type="text" formControlName="creditCardNumber" placeholder="5549900..." id="creditCardNumber"
+                    class="form-control"
+                    (blur)="setMessage()"
+                    >
+                <span class="help-block" *ngIf="formErrors.creditCardNumber">
+                  {{formErrors.creditCardNumber}}
+                </span>
+                </div>
+                <div class="form-group" [ngClass]="{'has-error': formErrors.cardHolder}">
+                  <label for="cardHolder">Card Holder</label>
+                  <input type="text" formControlName="cardHolder" placeholder="Solomon Umeh" id="cardHolder"
+                    class="form-control"
+                    (blur)="setMessage()"
+                    >
+                <span class="help-block" *ngIf="formErrors.cardHolder">
+                  {{formErrors.cardHolder}}
+                </span>
+                </div>
+                <div class="form-group" [ngClass]="{'has-error': formErrors.expirationDate}">
+                  <label for="expirationDate">Expiry Date</label>
+                  <input type="date" formControlName="expirationDate" placeholder="choose date" id="expirationDate"
+                    class="form-control"
+                    (blur)="setMessage()"
+                    >
+                <span class="help-block" *ngIf="formErrors.expirationDate">
+                  {{formErrors.expirationDate}}
+                </span>
+                </div>
+                <div class="form-group" [ngClass]="{'has-error': formErrors.securityCode}">
+                  <label for="securityCode">Security Code</label>
+                  <input type="text" formControlName="securityCode" placeholder="security code" id="securityCode"
+                    class="form-control"
+                    (blur)="setMessage()"
+                    >
+                <span class="help-block" *ngIf="formErrors.securityCode">
+                  {{formErrors.securityCode}}
+                </span>
+                </div>
+                <div class="form-group" [ngClass]="{'has-error': formErrors.amount}">
+                  <label for="amount">Amount</label>
+                  <input type="number" formControlName="amount" placeholder="Amount" id="amount"
+                    class="form-control"
+                    (blur)="setMessage()"
+                    >
+                <span class="help-block" *ngIf="formErrors.amount">
+                  {{formErrors.amount}}
+                </span>
+                </div>
+
+                <button type="submit" [disabled]="cardPaymentForm.invalid" class="btn btn-success">Login</button>
+              </form>
+            </div>
+          </div>
+
+
+        </div>
+
+      </div>
+    </div>
+  </section>
+</main>
+

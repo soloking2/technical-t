@@ -1,0 +1,39 @@
+{
+  "cards": [
+    {
+      "id": 0,
+      "creditCardNumber": "56779999",
+      "cardHolder": "Solomon Umeh",
+      "expirationDate": "2022-06-10",
+      "securityCode": "877",
+      "amount": 450
+    },
+    {
+      "id": 2,
+      "creditCardNumber": "875490949",
+      "cardHolder": "Mary King",
+      "expirationDate": "2022-12-10",
+      "securityCode": "867",
+      "amount": 6000
+    },
+    {
+      "id": 3,
+      "creditCardNumber": "67599008838",
+      "cardHolder": "Cassandra Jude",
+      "expirationDate": "2022-06-10",
+      "securityCode": "057",
+      "amount": 5550
+    },
+    {
+      "id": 4,
+      "creditCardNumber": "674849843",
+      "cardHolder": "Benjamin Mendy",
+      "expirationDate": "2022-06-10",
+      "securityCode": "657",
+      "amount": 1000
+    },
+    {
+      "id": 5
+    }
+  ]
+}

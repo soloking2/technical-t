@@ -1,0 +1,57 @@
+main {
+  background: #f7f7f7;
+}
+
+.card {
+  margin-top: 3rem;
+  padding: 1.4rem;
+}
+
+.card-title {
+  background-clip: text;
+  -webkit-background-clip: text;
+  background-image: linear-gradient(to right, #7dd56f, #28b487);
+  color: transparent;
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  font-weight: 700;
+  letter-spacing: 0.1rem;
+  line-height: 1.3;
+}
+
+.card-body form {
+  margin-top: 1.0rem;
+}
+
+
+.card-body form input {
+  padding: 1.4rem;
+  background: #f7f7f7;
+  font-size: 1.0rem;
+  vertical-align: middle;
+  border: none;
+}
+
+.card-body form input:focus {
+  outline: none;
+  border: none;
+  border-bottom: 2px solid orange;
+  transition: all .15s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+
+}
+
+.card-body form .form-group .form-control:focus {
+  box-shadow: none;
+}
+
+.form-group label {
+  font-weight: 700;
+  color: rgba(0, 0, 0, 0.6);
+  margin-top: 0.8rem;
+}
+
+
+.card-body button.btn-success {
+  padding: 11px 26px;
+  border-radius: 20px;
+}
