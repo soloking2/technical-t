@@ -103,14 +103,6 @@
       "expirationDate": "2021-01-29",
       "securityCode": "0099",
       "amount": 87
-    },
-    {
-      "id": 14,
-      "creditCardNumber": "jkfjhfj",
-      "cardHolder": "umeh",
-      "expirationDate": "2021-01-28",
-      "securityCode": "77888",
-      "amount": 89
     }
   ]
 }

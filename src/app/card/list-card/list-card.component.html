@@ -13,7 +13,7 @@
           <div class="card-body">
             <h6 class="card-title">{{card.cardHolder}}</h6>
             <p class="card-text">Card Number : {{card.creditCardNumber}}</p>
-            <p class="card-text">Expiration : {{card.expirationDate}}</p>
+            <p class="card-text">Expiration : {{card.expirationDate | date:'d-MMM-y'}}</p>
           </div>
         </div>
       </div>
