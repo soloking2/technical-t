@@ -5,13 +5,15 @@ import { CardRoutingModule } from './card-routing.module';
 import { CreateCardComponent } from './create-card/create-card.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { StoreModule } from '@ngrx/store';
-import { EffectsModule } from '@ngrx/effects';
 import * as fromCardState from './store';
+import { EffectsModule } from '@ngrx/effects';
 import { CardEffects } from './store/card.effects';
+import { ListCardComponent } from './list-card/list-card.component';
+
 
 
 @NgModule({
-  declarations: [CreateCardComponent],
+  declarations: [CreateCardComponent, ListCardComponent],
   imports: [
     CommonModule,
     CardRoutingModule,

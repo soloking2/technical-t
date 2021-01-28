@@ -4,14 +4,14 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
-import { StoreModule } from '@ngrx/store';
-import { EffectsModule } from '@ngrx/effects';
 import { HttpClientModule } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
-import { StoreRouterConnectingModule } from '@ngrx/router-store';
-import { StoreDevtoolsModule } from '@ngrx/store-devtools';
-import { reducers, metaReducers } from './reducers';
+import { StoreModule } from '@ngrx/store';
+import { metaReducers, reducers } from './reducers';
+import { EffectsModule } from '@ngrx/effects';
 import { AppEffects } from './app.effects';
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+
 
 
 @NgModule({
@@ -23,16 +23,11 @@ import { AppEffects } from './app.effects';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
+    StoreModule.forRoot((reducers), {metaReducers}),
     EffectsModule.forRoot([AppEffects]),
-    StoreRouterConnectingModule.forRoot(),
-    StoreModule.forRoot(reducers, {
-      metaReducers,
-      runtimeChecks: {
-        strictStateImmutability: true,
-        strictActionImmutability: true
-      }
-    }),
     StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: environment.production }),
+
+
 
   ],
   providers: [],

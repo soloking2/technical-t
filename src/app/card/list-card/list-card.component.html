@@ -1,0 +1,24 @@
+<div class="row justify-content-center">
+  <div class="col-8 mt-4">
+    <h4>Cards</h4>
+    <div class="text-right">
+      <button type="button" class="btn btn-success" [routerLink]="['/card/create']">Add New Card <i
+          class="fas fa-plus"></i></button>
+    </div>
+
+    <div class="row" *ngIf="cards">
+
+      <div class="col-lg-4 col-md-6 mt-3" *ngFor="let card of cards">
+        <div class="card">
+          <div class="card-body">
+            <h6 class="card-title">{{card.cardHolder}}</h6>
+            <p class="card-text">Card Number : {{card.creditCardNumber}}</p>
+            <p class="card-text">Expiration : {{card.expirationDate}}</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</div>

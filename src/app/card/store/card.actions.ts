@@ -2,28 +2,29 @@ import { createAction, props } from '@ngrx/store';
 import { Card } from '../shared/card';
 
 export const loadCards = createAction(
-  '[Home Component] Load Cards'
+  '[Card List Component] Load Cards'
 );
 
 export const loadCardsSuccess = createAction(
-  '[Card] Load Cards Success',
-  props<{ cards: Card[] }>()
+  '[Card Effect] Load Cards Success',
+  props<{ payload: Card[] }>()
 );
 
 export const loadCardsFailure = createAction(
-  '[Card] Load Cards Failure',
+  '[Card Effect] Load Cards Failure',
   props<{ error: any }>()
 );
 export const addCard = createAction(
-  '[Card] Add Card',
-  props<{ card: Card }>()
+  '[Card Create Component] Initialize Card',
+  props<{payload: Card}>()
 );
 
 export const addCardSuccess = createAction(
-  '[Card] Load Cards Failure',
-  props<{ card: Card }>()
+  '[Add Card Effect] Add Card Success',
+  props<{ payload: Card }>()
 );
+
 export const addCardFailure = createAction(
-  '[Card] Load Cards Failure',
+  '[Add Card Effect] Load Cards Failure',
   props<{ error: any }>()
 );

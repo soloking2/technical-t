@@ -2,13 +2,12 @@ import { AbstractControl } from "@angular/forms";
 
 export class CustomValidator {
   static validateDate(c: AbstractControl): {[key: string]: boolean} | null {
+    let date = c.value;
     let currentDate = new Date();
-    currentDate.setHours(0,0,0,0);
 
-    let expirateDate = new Date(c.value);
-    expirateDate.setHours(0,0,0,0);
+    let expirateDate = new Date(date);
 
-    if(currentDate < expirateDate) {
+    if(currentDate.toDateString() == expirateDate.toDateString()) {
       return {'match': true}
     }
 

@@ -1,4 +1,5 @@
 import {
+  Action,
   ActionReducer,
   ActionReducerMap,
   createFeatureSelector,
@@ -9,35 +10,75 @@ import {
 } from '@ngrx/store';
 import { environment } from '../../../environments/environment';
 import { Card } from '../shared/card';
-import { loadCardsFailure, loadCardsSuccess } from './card.actions';
+import * as fromActions from './card.actions';
 
 export const cardStateFeatureKey = 'cardState';
 
 export interface CardState {
-  cards: Card[],
-  error: any
+  cards: Card[];
+  error: any;
+  wasAdded: boolean;
 
 }
 
 export const initialState: CardState = {
-  cards: [],
-  error: ''
+  cards: undefined,
+  error: undefined,
+  wasAdded: false
+
 }
 
-export const reducers = createReducer(
+const cardReducer = createReducer(
   initialState,
-  on(loadCardsSuccess, (state, action) => {
+  on(fromActions.loadCardsSuccess, (state, action) => {
     return {
-      ...state,
-      cards: action.cards
+      cards: [...action.payload]
     }
   }),
-  on(loadCardsFailure, (state, action) => {
+  on(fromActions.loadCardsFailure, (state, action) => {
+    return {
+      cards: state.cards,
+      error: action.error,
+      wasAdded: false
+    }
+  }),
+  on(fromActions.addCardSuccess, (state, action) => {
+    return {
+      ...state,
+      wasAdded: true,
+      cards: [...state.cards, action.payload]
+    }
+  }),
+  on(fromActions.addCardFailure, (state, action) => {
     return {
       ...state,
       error: action.error
     }
   })
+
 )
+
+export function reducers(state: CardState, action: Action) {
+  return cardReducer(state, action);
+}
+
+
+export const selectCardState = createFeatureSelector<CardState>(cardStateFeatureKey);
+
+export const getCards = createSelector(
+  selectCardState,
+  (state: CardState) => state.cards
+);
+
+export const getErrors = createSelector(
+  selectCardState,
+  (state: CardState) => state.error
+)
+
+export const getAddedStatus = createSelector(
+  selectCardState,
+  (state: CardState) => state.wasAdded
+)
+
 
 export const metaReducers: MetaReducer<CardState>[] = !environment.production ? [] : [];
