@@ -6,9 +6,9 @@
           class="fas fa-plus"></i></button>
     </div>
 
-    <div class="row" *ngIf="cards">
+    <div class="row" *ngIf="(cards$ | async)?.length">
 
-      <div class="col-lg-4 col-md-6 mt-3" *ngFor="let card of cards">
+      <div class="col-lg-4 col-md-6 mt-3" *ngFor="let card of cards$ | async">
         <div class="card">
           <div class="card-body">
             <h6 class="card-title">{{card.cardHolder}}</h6>

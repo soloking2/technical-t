@@ -103,6 +103,14 @@
       "expirationDate": "2021-01-29",
       "securityCode": "0099",
       "amount": 87
+    },
+    {
+      "id": 14,
+      "creditCardNumber": "543390684589",
+      "cardHolder": "Chris Steve",
+      "expirationDate": "2021-01-29",
+      "securityCode": "085",
+      "amount": 899
     }
   ]
 }

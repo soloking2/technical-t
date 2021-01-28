@@ -13,16 +13,13 @@ import { loadCards } from '../store/card.actions';
 export class ListCardComponent implements OnInit {
 
    cards$: Observable<Card[]>;
-  cards;
 
   constructor(private store: Store<CardState>) { }
 
   ngOnInit(): void {
     this.store.dispatch(loadCards());
     this.cards$ = this.store.pipe(select(getCards));
-    this.cards$.subscribe((card) => {
-      this.cards = card;
-    })
+
   }
 
   loadCards() {
